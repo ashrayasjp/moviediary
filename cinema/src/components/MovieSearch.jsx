@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const API_KEY = '450880ff1e2f9c77a18d3c90f108eb88';
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
+
 
 function MovieSearch() {
   const navigate = useNavigate();

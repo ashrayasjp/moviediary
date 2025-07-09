@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const API_KEY = '450880ff1e2f9c77a18d3c90f108eb88';
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
 function MovieDetail() {
   const { id } = useParams();
