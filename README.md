@@ -1,6 +1,6 @@
 # Movie Diary Web App
 
-React js + Springboot
+React js + Springboot(Pending)
 
 API fetched from  https://www.themoviedb.org
 
