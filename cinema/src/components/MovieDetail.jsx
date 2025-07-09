@@ -19,13 +19,33 @@ function MovieDetail() {
   if (!movie) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div 
+    style={{ 
+      display: 'flex', 
+      gap: '20px', 
+
+      marginLeft: '100px', 
+      padding: '20px' 
+    }}
+  >
+       <div style={{ flex: 1.2 }}>
       <h2>{movie.title}</h2>
-      <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
-      <p>{movie.overview}</p>
+      <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} height= '300' width=  '300'    alt={movie.title} />
+     
+    
+  <p style={{ maxWidth: '600px',  marginRight: '400px' , textAlign:'justify' }}>{movie.overview}</p>
+
+
       <p>Release Date: {movie.release_date}</p>
       <p>Rating: {movie.vote_average}</p>
-    </div>
+      </div>
+      <div style={{ flex: 1, borderLeft: '1px solid #ccc', paddingLeft: '20px' }}>
+        <h3>Reviews</h3>
+        <p>No reviews yet.</p>
+        </div>
+        </div>
+ 
+
   );
 }
 
