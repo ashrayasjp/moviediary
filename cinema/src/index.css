@@ -75,3 +75,16 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.btn {
+  background-color: #1a5276;
+  color: white;
+  border: 1px solid gold;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #072030; 
+  border:none;
+}

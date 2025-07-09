@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import AddToDiary from '../components/AddToDiary';
+import AddToWatchlist from '../components/AddtoWatchlist';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 function MovieDetail() {
@@ -38,6 +39,9 @@ function MovieDetail() {
 
       <p>Release Date: {movie.release_date}</p>
       <p>Rating: {movie.vote_average}</p>
+      <AddToDiary movie= {movie}></AddToDiary>
+      <br/><br/>
+      <AddToWatchlist movie={movie}></AddToWatchlist>
       </div>
       <div style={{ flex: 1, borderLeft: '1px solid #ccc', paddingLeft: '20px' }}>
         <h3>Reviews</h3>
