@@ -10,6 +10,7 @@ function AddToWatchlist({ movie }) {
         movieTitle: movie.title,
         overview: movie.overview,
         posterUrl: `https://image.tmdb.org/t/p/w300${movie.poster_path}`,
+        status: "watchList",
       });
       alert("Movie Added To Watchlist");
     } catch (err) {
