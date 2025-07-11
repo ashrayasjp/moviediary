@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import java.time.LocalDate;
 
 @RestController
-@RequestMapping("/api/diary")
+@RequestMapping("/api")
+
 @CrossOrigin(origins = "http://localhost:5173")
 public class DiaryController {
 
@@ -33,7 +35,13 @@ public class DiaryController {
         movie.setOverview(dto.getOverview());
         movie.setPosterUrl(dto.getPosterUrl());
         movie.setStatus(dto.getStatus());
+        if (dto.getAddedDate() != null) {
+            movie.setAddedDate(LocalDate.parse(dto.getAddedDate()));
+        } else {
+            movie.setAddedDate(LocalDate.now());
+        }
         movieRepository.save(movie);
+
         return ResponseEntity.ok("Movie saved successfully");
     }
 
@@ -44,7 +52,7 @@ public class DiaryController {
 
     @DeleteMapping("/{status}")
     public ResponseEntity<String> deleteMoviesByStatus(@PathVariable("status") String status) {
-        movieRepository.deleteByStatus(status);
+        movieRepository.deleteAll();
         return ResponseEntity.ok("All movies with status '" + status + "' deleted");
     }
 

@@ -11,5 +11,6 @@ public class MovieDto {
     public String movieTitle;
     public String posterUrl;
     public String status;
+    public String addedDate;
 
 }

@@ -5,12 +5,12 @@ import axios from "axios";
 function AddToWatchlist({ movie }) {
   const HandleAddtoWatchlist = async () => {
     try {
-      await axios.post('http://localhost:8080/api/diary', {
+      await axios.post('http://localhost:8080/api', {
         tmdbId: movie.id,
         movieTitle: movie.title,
         overview: movie.overview,
         posterUrl: `https://image.tmdb.org/t/p/w300${movie.poster_path}`,
-        status: "watchList",
+        status: "watchlist",
       });
       alert("Movie Added To Watchlist");
     } catch (err) {

@@ -4,7 +4,8 @@ import axios from 'axios';
 function AddToDiary({movie}){
 const handleAddtoDiary =  async()=> {
     try {
-        await axios.post("http://localhost:8080/api/diary", {
+        const currentDate = new Date().toISOString().split('T'[0]);
+        await axios.post("http://localhost:8080/api", {
 tmdbId: movie.id,
 movieTitle: movie.title,
 overview: movie.overview,
